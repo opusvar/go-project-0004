@@ -35,7 +35,6 @@ func greetPlanet(planet string) {
 }
 
 func main(){
-	greetPlanet("Genesis")
-
+    
 
 }
