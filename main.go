@@ -34,7 +34,39 @@ func greetPlanet(planet string) {
 
 }
 
+func cantFly() {
+	f.Println("We donot have the available fuel to fly there.")
+}
+
+func flyToPlanet(planet string, fuel int) int{
+	var fuelRemaining, fuelCost int
+	fuelRemaining = fuel
+	fuelCost = calculateFuel(planet)
+	if fuelRemaining >= fuelCost {
+		greetPlanet(planet)
+		fuelRemaining -= fuelCost
+	} else {
+		cantFly()
+	}
+	return fuelRemaining
+}
+
 func main(){
+    var fuel int
+	var planetChoice string
     
+	fuel = 1000000
+	planetChoice = "Venus"
+
+	fuel = flyToPlanet(planetChoice, fuel)
+	fuelGuage(fuel)
+
+
 
 }
+
+// If you want to challenge yourself more:
+
+// Add a variable that keeps track of which planet your spaceship is on.
+// Create a function that returns your spaceship back to your home planet.
+// Add more destinations and allow for traveling between different planets.
